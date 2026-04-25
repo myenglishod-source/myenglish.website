@@ -3,87 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My English — школа англійської</title>
+  <title>My English — школа англійської в Одесі</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #ffffff;
+      background: #fbf8ff;
       color: #2b1b5f;
       text-align: center;
     }
 
     .hero {
-      background: linear-gradient(135deg, #3b168f, #7b35f2);
+      background: radial-gradient(circle at top, #8f5cff, #4b18b8 55%, #2b0b72);
       color: white;
-      padding: 35px 20px 45px;
+      padding: 45px 20px 55px;
     }
 
     .logo {
-      width: 140px;
+      width: 190px;
       border-radius: 50%;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.25);
     }
 
     h1 {
-      font-size: 46px;
+      font-size: 52px;
       margin: 10px 0;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
     }
 
     .subtitle {
       font-size: 22px;
       line-height: 1.5;
-      margin-bottom: 28px;
+      max-width: 760px;
+      margin: 0 auto 30px;
+    }
+
+    .luxury {
+      color: #f5d7ff;
+      font-size: 20px;
+      margin-top: 12px;
     }
 
     .buttons {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-      max-width: 1100px;
-      margin: 0 auto 28px;
+      gap: 22px;
+      max-width: 1120px;
+      margin: 35px auto 28px;
     }
 
     .btn {
-      border-radius: 18px;
-      padding: 25px 15px;
+      border-radius: 24px;
+      padding: 28px 16px;
       text-decoration: none;
       color: white;
       font-weight: bold;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.22);
       display: block;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
     }
 
     .btn span {
       display: block;
-      font-size: 42px;
-      margin-bottom: 10px;
+      font-size: 44px;
+      margin-bottom: 12px;
     }
 
-    .phone { background: linear-gradient(135deg, #a94cff, #7d30e8); }
-    .insta { background: linear-gradient(135deg, #ff6680, #d83fa3); }
-    .tg { background: linear-gradient(135deg, #20c7ff, #139ee8); }
-    .bot { background: linear-gradient(135deg, #b8b8d8, #8f8fb8); }
+    .phone { background: linear-gradient(135deg, #b45cff, #6a2de2); }
+    .insta { background: linear-gradient(135deg, #ff6d91, #d842a6); }
+    .tg { background: linear-gradient(135deg, #28cfff, #1597e5); }
+    .bot { background: linear-gradient(135deg, #2b1b5f, #7b35f2); }
 
     .address {
-      background: white;
+      background: rgba(255,255,255,0.95);
       color: #4a2a9c;
-      max-width: 520px;
+      max-width: 620px;
       margin: 0 auto;
-      padding: 18px 25px;
-      border-radius: 16px;
-      font-size: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+      padding: 20px 28px;
+      border-radius: 20px;
+      font-size: 19px;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
     }
 
     .section {
-      padding: 35px 20px;
+      padding: 45px 20px;
     }
 
     h2 {
-      font-size: 34px;
+      font-size: 36px;
       color: #32106f;
       margin-bottom: 30px;
     }
@@ -91,12 +104,16 @@
     .features {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 25px;
+      gap: 24px;
       max-width: 1150px;
       margin: 0 auto;
     }
 
     .feature {
+      background: white;
+      border-radius: 22px;
+      padding: 25px 15px;
+      box-shadow: 0 10px 25px rgba(72, 34, 150, 0.12);
       font-size: 16px;
       line-height: 1.5;
     }
@@ -122,19 +139,19 @@
 
     .gallery img {
       width: 100%;
-      border-radius: 18px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      border-radius: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
     }
 
     .bottom {
       max-width: 1100px;
-      margin: 35px auto;
+      margin: 35px auto 45px;
       background: white;
-      border-radius: 24px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      border-radius: 26px;
+      box-shadow: 0 12px 30px rgba(72, 34, 150, 0.16);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      padding: 22px;
+      padding: 24px;
       gap: 20px;
     }
 
@@ -143,23 +160,27 @@
     }
 
     footer {
-      background: #6c2fe8;
+      background: linear-gradient(135deg, #4b18b8, #8f5cff);
       color: white;
-      padding: 16px;
+      padding: 18px;
       font-size: 14px;
     }
 
-    @media (max-width: 800px) {
+    @media (max-width: 850px) {
       .buttons, .features, .gallery, .bottom {
         grid-template-columns: 1fr;
       }
 
       h1 {
-        font-size: 36px;
+        font-size: 38px;
       }
 
       h2 {
         font-size: 28px;
+      }
+
+      .logo {
+        width: 160px;
       }
     }
   </style>
@@ -168,17 +189,20 @@
 <body>
 
   <div class="hero">
-    <img class="logo" src="logo.PNG" alt="My English logo">
+    <img class="logo" src="logo.png" alt="My English logo">
 
     <h1>MY ENGLISH</h1>
 
     <div class="subtitle">
-      Школа англійської мови в Радужному 💜<br><br>
-      Англійська, яку хочеться вчити 💜<br>
-      Для дітей та підлітків від 6 до 18 років
+      Школа англійської мови з душею в Одесі 💜<br>
+      ж/м Радужний, 19/1<br><br>
+      Англійська, яку хочеться вчити.<br>
+      Для дітей та підлітків від 6 до 18 років.
+      <div class="luxury">Speaking • підтримка • система • результат</div>
     </div>
 
     <div class="buttons">
+
       <a class="btn phone" href="tel:+380971817044">
         <span>📞</span>
         Подзвонити<br>
@@ -197,16 +221,17 @@
         myenglishod
       </a>
 
-      <div class="btn bot">
+      <a class="btn bot" href="https://t.me/my_english_od_bot" target="_blank">
         <span>🤖</span>
-        Бот скоро<br>
-        Розробляємо для вас
-      </div>
+        Пройти тест<br>
+        у боті
+      </a>
+
     </div>
 
     <div class="address">
-      📍 <b>Радужний 19/1</b><br>
-      Зручне місце та дружня атмосфера
+      📍 <b>Одеса, ж/м Радужний, 19/1</b><br>
+      Атмосферна школа, де дітей чують, підтримують і ведуть до результату
     </div>
   </div>
 
@@ -258,12 +283,12 @@
   <div class="bottom">
     <div>
       📞 <b>097 181 70 44</b><br>
-      Телефон
+      Телефон для запису
     </div>
 
     <div>
       📍 <b>Радужний 19/1</b><br>
-      Наш адрес
+      Одеса
     </div>
 
     <div>
