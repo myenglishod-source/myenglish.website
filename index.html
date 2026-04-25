@@ -9,155 +9,272 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #5B1FD6, #8F5CFF);
-      color: white;
+      background: #ffffff;
+      color: #2b1b5f;
       text-align: center;
     }
 
-    header {
-      padding: 35px 20px 25px;
+    .hero {
+      background: linear-gradient(135deg, #3b168f, #7b35f2);
+      color: white;
+      padding: 35px 20px 45px;
     }
 
-    header img {
+    .logo {
       width: 140px;
-      border-radius: 20px;
+      border-radius: 50%;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 42px;
-      margin: 18px 0 10px;
+      font-size: 46px;
+      margin: 10px 0;
       letter-spacing: 2px;
     }
 
     .subtitle {
-      font-size: 20px;
-      line-height: 1.4;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .card {
-      background: white;
-      color: #2b2b2b;
-      margin: 30px 15px;
-      padding: 30px 20px;
-      border-radius: 24px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    h2 {
-      color: #5B1FD6;
-      font-size: 28px;
-    }
-
-    .features {
-      font-size: 18px;
-      line-height: 1.8;
-      text-align: left;
-      max-width: 520px;
-      margin: 0 auto;
+      font-size: 22px;
+      line-height: 1.5;
+      margin-bottom: 28px;
     }
 
     .buttons {
-      margin-top: 25px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      align-items: center;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      max-width: 1100px;
+      margin: 0 auto 28px;
     }
 
     .btn {
-      width: 85%;
-      max-width: 360px;
-      padding: 15px 20px;
-      border-radius: 14px;
+      border-radius: 18px;
+      padding: 25px 15px;
       text-decoration: none;
       color: white;
-      background: #5B1FD6;
-      font-size: 18px;
       font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
       display: block;
     }
 
-    .btn.light {
-      background: #00AEEF;
+    .btn span {
+      display: block;
+      font-size: 42px;
+      margin-bottom: 10px;
     }
 
-    .btn.dark {
-      background: #333;
-    }
+    .phone { background: linear-gradient(135deg, #a94cff, #7d30e8); }
+    .insta { background: linear-gradient(135deg, #ff6680, #d83fa3); }
+    .tg { background: linear-gradient(135deg, #20c7ff, #139ee8); }
+    .bot { background: linear-gradient(135deg, #b8b8d8, #8f8fb8); }
 
-    .contacts {
-      margin-top: 25px;
+    .address {
+      background: white;
+      color: #4a2a9c;
+      max-width: 520px;
+      margin: 0 auto;
+      padding: 18px 25px;
+      border-radius: 16px;
       font-size: 18px;
-      line-height: 1.7;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .section {
+      padding: 35px 20px;
+    }
+
+    h2 {
+      font-size: 34px;
+      color: #32106f;
+      margin-bottom: 30px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 25px;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .feature {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .feature .icon {
+      font-size: 42px;
+      margin-bottom: 12px;
+    }
+
+    .feature b {
+      display: block;
+      color: #32106f;
+      margin-bottom: 8px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .bottom {
+      max-width: 1100px;
+      margin: 35px auto;
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 22px;
+      gap: 20px;
+    }
+
+    .bottom div {
+      font-size: 17px;
     }
 
     footer {
-      padding: 25px;
+      background: #6c2fe8;
+      color: white;
+      padding: 16px;
       font-size: 14px;
-      opacity: 0.8;
+    }
+
+    @media (max-width: 800px) {
+      .buttons, .features, .gallery, .bottom {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 36px;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <img src="logo.PNG" alt="My English logo">
-  <h1>MY ENGLISH</h1>
-  <div class="subtitle">
-    Англійська, яку хочеться вчити — починається тут 💜<br>
-    Школа англійської для дітей та підлітків на Радужному
-  </div>
-</header>
+  <div class="hero">
+    <img class="logo" src="logo.PNG" alt="My English logo">
 
-<div class="card">
-  <h2>Чому обирають My English?</h2>
+    <h1>MY ENGLISH</h1>
 
-  <div class="features">
-    ✔ Маленькі групи та увага кожному<br>
-    ✔ Багато speaking practice на уроці<br>
-    ✔ Сучасні методики, ігри та живе спілкування<br>
-    ✔ Підготовка до НМТ та міжнародних іспитів<br>
-    ✔ Чітка система навчання та прозорий прогрес
-  </div>
-</div>
+    <div class="subtitle">
+      Школа англійської мови в Радужному 💜<br><br>
+      Англійська, яку хочеться вчити 💜<br>
+      Для дітей та підлітків від 6 до 18 років
+    </div>
 
-<div class="card">
-  <h2>Запишіться на перше безкоштовне заняття</h2>
+    <div class="buttons">
+      <a class="btn phone" href="tel:+380971817044">
+        <span>📞</span>
+        Подзвонити<br>
+        097 181 70 44
+      </a>
 
-  <div class="buttons">
+      <a class="btn insta" href="https://www.instagram.com/my.english.od" target="_blank">
+        <span>📸</span>
+        Instagram<br>
+        my.english.od
+      </a>
 
-    <a class="btn" href="tel:+380971817044">
-      📞 Подзвонити: 097 181 70 44
-    </a>
+      <a class="btn tg" href="https://t.me/myenglishod" target="_blank">
+        <span>✈️</span>
+        Telegram канал<br>
+        myenglishod
+      </a>
 
-    <a class="btn light" href="https://www.instagram.com/my.english.od" target="_blank">
-      📸 Instagram My English
-    </a>
+      <div class="btn bot">
+        <span>🤖</span>
+        Бот скоро<br>
+        Розробляємо для вас
+      </div>
+    </div>
 
-    <a class="btn light" href="https://t.me/myenglishod" target="_blank">
-      💬 Telegram канал My English
-    </a>
-
-    <a class="btn dark" href="https://t.me/my_english_od_bot" target="_blank">
-      🤖 Пройти тест у боті
-    </a>
-
-  </div>
-
-  <div class="contacts">
-    📍 Радужний 19/1<br>
-    📞 097 181 70 44<br>
-    📞 050 181 70 44
+    <div class="address">
+      📍 <b>Радужний 19/1</b><br>
+      Зручне місце та дружня атмосфера
+    </div>
   </div>
 
-</div>
+  <div class="section">
+    <h2>Чому обирають My English?</h2>
 
-<footer>
-  © My English School
-</footer>
+    <div class="features">
+      <div class="feature">
+        <div class="icon">👥</div>
+        <b>Маленькі групи</b>
+        Увага кожному та комфортна атмосфера на уроках
+      </div>
+
+      <div class="feature">
+        <div class="icon">💬</div>
+        <b>Speaking practice</b>
+        Багато живого спілкування та розмовної практики
+      </div>
+
+      <div class="feature">
+        <div class="icon">⭐</div>
+        <b>Сучасні методики</b>
+        Ігри, інтерактив, цікаві завдання та новітні підходи
+      </div>
+
+      <div class="feature">
+        <div class="icon">🎓</div>
+        <b>Підготовка до іспитів</b>
+        НМТ, міжнародні іспити та шкільна програма на 5+
+      </div>
+
+      <div class="feature">
+        <div class="icon">📈</div>
+        <b>Чітка система</b>
+        Прозорий прогрес, регулярний контроль та підтримка
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Наш шлях до впевненого speaking</h2>
+
+    <div class="gallery">
+      <img src="photo1.jpg" alt="Speaking без страху">
+      <img src="photo2.jpg" alt="Шлях до speaking">
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div>
+      📞 <b>097 181 70 44</b><br>
+      Телефон
+    </div>
+
+    <div>
+      📍 <b>Радужний 19/1</b><br>
+      Наш адрес
+    </div>
+
+    <div>
+      ✈️ <b>myenglishod</b><br>
+      Telegram канал
+    </div>
+  </div>
+
+  <footer>
+    © 2025 My English School
+  </footer>
 
 </body>
 </html>
