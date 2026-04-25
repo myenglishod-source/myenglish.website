@@ -19,35 +19,55 @@
     }
 
     .hero {
-      background: radial-gradient(circle at top, #9b6dff, #4b18b8 55%, #230760);
+      position: relative;
       color: white;
-      padding: 48px 20px 60px;
+      padding: 55px 20px 70px;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(35, 7, 96, 0.72), rgba(35, 7, 96, 0.78)),
+        url("photo1.jpg") center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top, rgba(190,145,255,0.38), rgba(75,24,184,0.35), rgba(20,5,55,0.78));
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1160px;
+      margin: 0 auto;
     }
 
     .logo {
-      width: 200px;
+      width: 210px;
       border-radius: 50%;
-      margin-bottom: 18px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.35);
+      margin-bottom: 20px;
+      box-shadow: 0 20px 55px rgba(0,0,0,0.42);
     }
 
     h1 {
-      font-size: 54px;
+      font-size: 56px;
       margin: 10px 0;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
     }
 
     .subtitle {
       font-size: 22px;
       line-height: 1.55;
-      max-width: 780px;
-      margin: 0 auto 30px;
+      max-width: 820px;
+      margin: 0 auto 34px;
     }
 
     .luxury {
-      color: #f2d9ff;
+      color: #f3dcff;
       font-size: 20px;
       margin-top: 14px;
+      letter-spacing: 1px;
     }
 
     .buttons {
@@ -55,56 +75,72 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 22px;
       max-width: 1120px;
-      margin: 35px auto 28px;
+      margin: 38px auto 30px;
     }
 
     .btn {
-      border-radius: 26px;
+      border-radius: 30px;
       padding: 30px 16px;
       text-decoration: none;
       color: white;
       font-weight: bold;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.45), 0 18px 35px rgba(0,0,0,0.25);
       display: block;
       transition: 0.25s;
-      border: 1px solid rgba(255,255,255,0.28);
+      border: 1px solid rgba(255,255,255,0.32);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 -18px 35px rgba(0,0,0,0.12),
+        0 18px 40px rgba(0,0,0,0.28);
+      backdrop-filter: blur(8px);
     }
 
     .btn:hover {
       transform: translateY(-5px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 22px 42px rgba(0,0,0,0.3);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.65),
+        inset 0 -18px 35px rgba(0,0,0,0.14),
+        0 24px 48px rgba(0,0,0,0.34);
     }
 
     .btn span {
-      display: block;
-      font-size: 44px;
-      margin-bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.96);
+      color: #4b18b8;
+      font-size: 34px;
+      margin-bottom: 14px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
     }
 
-    .phone { background: linear-gradient(145deg, #c77dff, #7b2ff7 60%, #4b18b8); }
-    .insta { background: linear-gradient(145deg, #ff8aae, #df3fa6 60%, #8c1d7d); }
-    .tg { background: linear-gradient(145deg, #5de2ff, #179ee9 60%, #0b62b8); }
-    .bot { background: linear-gradient(145deg, #a57bff, #4d21c8 60%, #21105f); }
+    .phone { background: linear-gradient(145deg, #a66bff, #6b2be8 58%, #3b168f); }
+    .insta { background: linear-gradient(145deg, #ff8db1, #e445a8 58%, #9b247f); }
+    .tg { background: linear-gradient(145deg, #66e3ff, #149fe8 58%, #0b65ba); }
+    .bot { background: linear-gradient(145deg, #b996ff, #5b28d6 58%, #2b126f); }
 
     .address {
-      background: rgba(255,255,255,0.96);
-      color: #4a2a9c;
-      max-width: 660px;
+      background: rgba(255,255,255,0.94);
+      color: #3a197f;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 22px 30px;
-      border-radius: 22px;
+      padding: 24px 32px;
+      border-radius: 28px;
       font-size: 19px;
-      box-shadow: 0 14px 32px rgba(0,0,0,0.2);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.65);
     }
 
     .section {
-      padding: 55px 20px;
+      padding: 60px 20px;
     }
 
     h2 {
       font-size: 38px;
       color: #32106f;
-      margin-bottom: 32px;
+      margin-bottom: 34px;
     }
 
     .features {
@@ -116,18 +152,19 @@
     }
 
     .feature {
-      background: rgba(255,255,255,0.92);
-      border-radius: 26px;
-      padding: 28px 16px;
-      box-shadow: 0 14px 35px rgba(72, 34, 150, 0.14);
+      background: rgba(255,255,255,0.94);
+      border-radius: 30px;
+      padding: 30px 18px;
+      box-shadow: 0 18px 42px rgba(72, 34, 150, 0.13);
       font-size: 16px;
-      line-height: 1.5;
-      border: 1px solid rgba(120, 70, 220, 0.12);
+      line-height: 1.55;
+      border: 1px solid rgba(120, 70, 220, 0.13);
     }
 
     .feature .icon {
-      font-size: 44px;
+      font-size: 42px;
       margin-bottom: 14px;
+      color: #6b2be8;
     }
 
     .feature b {
@@ -138,40 +175,43 @@
     }
 
     .format {
-      max-width: 780px;
-      margin: 35px auto 0;
-      background: linear-gradient(135deg, #ffffff, #f4edff);
-      border-radius: 26px;
-      padding: 26px;
-      box-shadow: 0 14px 35px rgba(72, 34, 150, 0.14);
+      max-width: 820px;
+      margin: 38px auto 0;
+      background: linear-gradient(135deg, #ffffff, #f3edff);
+      border-radius: 30px;
+      padding: 28px;
+      box-shadow: 0 18px 42px rgba(72, 34, 150, 0.13);
       font-size: 20px;
-      line-height: 1.55;
+      line-height: 1.6;
+      border: 1px solid rgba(120, 70, 220, 0.13);
     }
 
     .gallery {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-      max-width: 1100px;
+      gap: 26px;
+      max-width: 1120px;
       margin: 0 auto;
     }
 
     .gallery img {
       width: 100%;
-      border-radius: 26px;
-      box-shadow: 0 16px 36px rgba(0,0,0,0.2);
+      border-radius: 30px;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.7);
     }
 
     .bottom {
       max-width: 1100px;
-      margin: 35px auto 50px;
-      background: white;
-      border-radius: 28px;
-      box-shadow: 0 14px 35px rgba(72, 34, 150, 0.16);
+      margin: 38px auto 54px;
+      background: rgba(255,255,255,0.95);
+      border-radius: 32px;
+      box-shadow: 0 18px 45px rgba(72, 34, 150, 0.17);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      padding: 26px;
+      padding: 28px;
       gap: 20px;
+      border: 1px solid rgba(120, 70, 220, 0.12);
     }
 
     .bottom div {
@@ -179,7 +219,7 @@
     }
 
     footer {
-      background: linear-gradient(135deg, #4b18b8, #8f5cff);
+      background: linear-gradient(135deg, #2b0b72, #7b35f2);
       color: white;
       padding: 18px;
       font-size: 14px;
@@ -201,6 +241,10 @@
       .logo {
         width: 165px;
       }
+
+      .hero {
+        padding: 42px 18px 55px;
+      }
     }
   </style>
 </head>
@@ -208,49 +252,51 @@
 <body>
 
   <div class="hero">
-    <img class="logo" src="logo.png" alt="My English logo">
+    <div class="hero-content">
+      <img class="logo" src="logo.png" alt="My English logo">
 
-    <h1>MY ENGLISH</h1>
+      <h1>MY ENGLISH</h1>
 
-    <div class="subtitle">
-      Школа англійської мови з душею в Одесі 💜<br>
-      ж/м Радужний, 19/1<br><br>
-      Англійська, яку хочеться вчити.<br>
-      Для дітей та підлітків від 6 до 18 років.
-      <div class="luxury">Speaking • підтримка • система • результат</div>
-    </div>
+      <div class="subtitle">
+        Школа англійської мови з душею в Одесі 💜<br>
+        ж/м Радужний, 19/1<br><br>
+        Англійська, яку хочеться вчити.<br>
+        Для дітей та підлітків від 6 до 18 років.
+        <div class="luxury">Speaking • підтримка • система • результат</div>
+      </div>
 
-    <div class="buttons">
+      <div class="buttons">
 
-      <a class="btn phone" href="tel:+380971817044">
-        <span>☎️</span>
-        Подзвонити<br>
-        097 181 70 44
-      </a>
+        <a class="btn phone" href="tel:+380971817044">
+          <span>☎</span>
+          Подзвонити<br>
+          097 181 70 44
+        </a>
 
-      <a class="btn insta" href="https://www.instagram.com/my.english.od" target="_blank">
-        <span>◎</span>
-        Instagram<br>
-        my.english.od
-      </a>
+        <a class="btn insta" href="https://www.instagram.com/my.english.od" target="_blank">
+          <span>◎</span>
+          Instagram<br>
+          my.english.od
+        </a>
 
-      <a class="btn tg" href="https://t.me/myenglishod" target="_blank">
-        <span>✦</span>
-        Telegram канал<br>
-        myenglishod
-      </a>
+        <a class="btn tg" href="https://t.me/myenglishod" target="_blank">
+          <span>✈</span>
+          Telegram канал<br>
+          myenglishod
+        </a>
 
-      <a class="btn bot" href="https://t.me/my_english_od_bot" target="_blank">
-        <span>✧</span>
-        Пройти тест<br>
-        у боті
-      </a>
+        <a class="btn bot" href="https://t.me/my_english_od_bot" target="_blank">
+          <span>✧</span>
+          Пройти тест<br>
+          у боті
+        </a>
 
-    </div>
+      </div>
 
-    <div class="address">
-      📍 <b>Одеса, ж/м Радужний, 19/1</b><br>
-      Атмосферна школа, де дітей чують, підтримують і ведуть до результату
+      <div class="address">
+        📍 <b>Одеса, ж/м Радужний, 19/1</b><br>
+        Атмосферна школа, де дітей чують, підтримують і ведуть до результату
+      </div>
     </div>
   </div>
 
@@ -265,13 +311,13 @@
       </div>
 
       <div class="feature">
-        <div class="icon">💬</div>
+        <div class="icon">✦</div>
         <b>Speaking practice</b>
         Багато живого спілкування та розмовної практики
       </div>
 
       <div class="feature">
-        <div class="icon">✦</div>
+        <div class="icon">◇</div>
         <b>Сучасні методики</b>
         Ігри, інтерактив, цікаві завдання та новітні підходи
       </div>
@@ -283,7 +329,7 @@
       </div>
 
       <div class="feature">
-        <div class="icon">◇</div>
+        <div class="icon">⌁</div>
         <b>Чітка система</b>
         Прозорий прогрес, регулярний контроль та підтримка
       </div>
@@ -305,7 +351,7 @@
 
   <div class="bottom">
     <div>
-      ☎️ <b>097 181 70 44</b><br>
+      ☎ <b>097 181 70 44</b><br>
       Телефон для запису
     </div>
 
@@ -315,7 +361,7 @@
     </div>
 
     <div>
-      ✦ <b>myenglishod</b><br>
+      ✈ <b>myenglishod</b><br>
       Telegram канал
     </div>
   </div>
