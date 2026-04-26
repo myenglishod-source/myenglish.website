@@ -30,7 +30,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at top, rgba(190,145,255,0.38), rgba(75,24,184,0.35), rgba(20,5,55,0.78));
+      background: radial-gradient(circle at top, rgba(190,145,255,0.4), rgba(75,24,184,0.35), rgba(20,5,55,0.78));
       z-index: 0;
     }
 
@@ -45,7 +45,7 @@
       width: 210px;
       border-radius: 50%;
       margin-bottom: 20px;
-      box-shadow: 0 20px 55px rgba(0,0,0,0.42);
+      box-shadow: 0 20px 55px rgba(0,0,0,0.42), 0 0 35px rgba(190,145,255,0.5);
     }
 
     h1 {
@@ -88,15 +88,22 @@
       align-items: center;
       justify-content: center;
       transition: 0.25s;
-      border: 1px solid rgba(255,255,255,0.32);
+      border: 1px solid rgba(255,255,255,0.35);
       box-shadow:
-        inset 0 1px 0 rgba(255,255,255,0.55),
+        inset 0 1px 0 rgba(255,255,255,0.6),
         inset 0 -18px 35px rgba(0,0,0,0.12),
-        0 18px 40px rgba(0,0,0,0.28);
+        0 18px 40px rgba(0,0,0,0.28),
+        0 0 22px rgba(180,130,255,0.25);
       backdrop-filter: blur(8px);
     }
 
-    .btn:hover { transform: translateY(-5px); }
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.7),
+        0 24px 50px rgba(0,0,0,0.35),
+        0 0 35px rgba(210,170,255,0.42);
+    }
 
     .btn span {
       display: flex;
@@ -139,7 +146,7 @@
       padding: 24px 32px;
       border-radius: 28px;
       font-size: 19px;
-      box-shadow: 0 18px 45px rgba(0,0,0,0.25);
+      box-shadow: 0 18px 45px rgba(0,0,0,0.25), 0 0 30px rgba(210,170,255,0.32);
       border: 1px solid rgba(255,255,255,0.65);
     }
 
@@ -163,7 +170,7 @@
       background: rgba(255,255,255,0.94);
       border-radius: 30px;
       padding: 30px 18px;
-      box-shadow: 0 18px 42px rgba(72, 34, 150, 0.13);
+      box-shadow: 0 18px 42px rgba(72, 34, 150, 0.13), 0 0 28px rgba(160,110,255,0.16);
       font-size: 16px;
       line-height: 1.55;
       border: 1px solid rgba(120, 70, 220, 0.13);
@@ -173,6 +180,7 @@
       font-size: 42px;
       margin-bottom: 14px;
       color: #6b2be8;
+      text-shadow: 0 0 18px rgba(120,70,220,0.4);
     }
 
     .feature b {
@@ -188,7 +196,7 @@
       background: linear-gradient(135deg, #ffffff, #f3edff);
       border-radius: 30px;
       padding: 30px;
-      box-shadow: 0 18px 42px rgba(72, 34, 150, 0.13);
+      box-shadow: 0 18px 42px rgba(72, 34, 150, 0.13), 0 0 35px rgba(180,130,255,0.22);
       font-size: 20px;
       line-height: 1.6;
       border: 1px solid rgba(120, 70, 220, 0.13);
@@ -199,30 +207,75 @@
     }
 
     .fortune-card {
-      max-width: 880px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 36px 28px;
-      border-radius: 36px;
+      padding: 38px 28px;
+      border-radius: 38px;
       background:
-        linear-gradient(135deg, rgba(255,255,255,0.94), rgba(245,238,255,0.92));
-      box-shadow: 0 22px 58px rgba(72, 34, 150, 0.2);
-      border: 1px solid rgba(120,70,220,0.16);
+        radial-gradient(circle at top, rgba(255,255,255,0.96), rgba(243,237,255,0.92));
+      box-shadow: 0 24px 65px rgba(72, 34, 150, 0.24), 0 0 45px rgba(180,130,255,0.22);
+      border: 1px solid rgba(120,70,220,0.18);
     }
 
-    .fortune-symbol {
-      font-size: 44px;
-      color: #6b2be8;
-      margin-bottom: 14px;
+    .magic-ball {
+      position: relative;
+      width: 280px;
+      height: 280px;
+      margin: 10px auto 26px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 25%, rgba(255,255,255,0.95), rgba(190,145,255,0.55) 22%, rgba(91,40,214,0.85) 52%, rgba(35,7,96,0.98) 100%);
+      overflow: hidden;
+      box-shadow:
+        inset 0 0 35px rgba(255,255,255,0.34),
+        inset 0 -30px 55px rgba(0,0,0,0.28),
+        0 0 45px rgba(130,80,255,0.45),
+        0 25px 60px rgba(35,7,96,0.28);
+      border: 2px solid rgba(255,255,255,0.45);
+    }
+
+    .magic-ball::before {
+      content: "";
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      left: -70px;
+      top: -90px;
+      background:
+        radial-gradient(circle, rgba(255,255,255,0.34), transparent 34%),
+        radial-gradient(circle at 70% 60%, rgba(122,217,255,0.28), transparent 35%),
+        radial-gradient(circle at 30% 70%, rgba(255,140,215,0.3), transparent 32%);
+      animation: mistMove 8s infinite linear;
+      filter: blur(18px);
+    }
+
+    .magic-ball::after {
+      content: "✦";
+      position: absolute;
+      top: 26px;
+      right: 52px;
+      font-size: 34px;
+      color: rgba(255,255,255,0.85);
+      text-shadow: 0 0 22px white;
+    }
+
+    @keyframes mistMove {
+      0% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.08); }
+      100% { transform: rotate(360deg) scale(1); }
     }
 
     .fortune-text {
-      min-height: 70px;
-      margin: 24px auto;
-      max-width: 680px;
-      font-size: 25px;
-      line-height: 1.45;
-      color: #32106f;
+      position: absolute;
+      z-index: 2;
+      left: 26px;
+      right: 26px;
+      top: 92px;
+      color: white;
+      font-size: 22px;
+      line-height: 1.35;
       font-weight: bold;
+      text-shadow: 0 2px 18px rgba(0,0,0,0.45);
     }
 
     .fortune-note {
@@ -241,7 +294,7 @@
       font-weight: bold;
       font-size: 17px;
       cursor: pointer;
-      box-shadow: 0 14px 32px rgba(75,24,184,0.26);
+      box-shadow: 0 14px 32px rgba(75,24,184,0.26), 0 0 22px rgba(180,130,255,0.32);
     }
 
     .fortune-link {
@@ -261,13 +314,13 @@
     }
 
     .game-card {
-      max-width: 900px;
+      max-width: 930px;
       margin: 0 auto;
-      padding: 34px;
-      border-radius: 34px;
-      background: rgba(255,255,255,0.9);
-      box-shadow: 0 20px 55px rgba(72, 34, 150, 0.18);
-      border: 1px solid rgba(120,70,220,0.16);
+      padding: 36px;
+      border-radius: 36px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: 0 24px 65px rgba(72, 34, 150, 0.22), 0 0 45px rgba(180,130,255,0.2);
+      border: 1px solid rgba(120,70,220,0.18);
     }
 
     .level-buttons {
@@ -286,7 +339,7 @@
       color: white;
       font-weight: bold;
       cursor: pointer;
-      box-shadow: 0 12px 28px rgba(75,24,184,0.22);
+      box-shadow: 0 12px 28px rgba(75,24,184,0.22), 0 0 18px rgba(180,130,255,0.25);
     }
 
     .big-word {
@@ -295,6 +348,7 @@
       font-weight: bold;
       color: #32106f;
       margin: 20px 0;
+      text-shadow: 0 0 14px rgba(150,100,255,0.24);
     }
 
     .tiles, .answer {
@@ -311,6 +365,7 @@
     .answer {
       background: #f3edff;
       border: 1px dashed #8f5cff;
+      box-shadow: inset 0 0 18px rgba(140,90,255,0.14);
     }
 
     .tile {
@@ -324,7 +379,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 18px rgba(72,34,150,0.16);
+      box-shadow: 0 8px 18px rgba(72,34,150,0.16), 0 0 14px rgba(180,130,255,0.18);
       cursor: grab;
       user-select: none;
     }
@@ -375,7 +430,7 @@
       margin: 38px auto 54px;
       background: rgba(255,255,255,0.95);
       border-radius: 32px;
-      box-shadow: 0 18px 45px rgba(72, 34, 150, 0.17);
+      box-shadow: 0 18px 45px rgba(72, 34, 150, 0.17), 0 0 35px rgba(180,130,255,0.18);
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       padding: 28px;
@@ -413,7 +468,8 @@
       .hero { padding: 42px 18px 55px; }
       .big-word { font-size: 26px; letter-spacing: 3px; }
       .game-card, .fortune-card { padding: 24px 14px; }
-      .fortune-text { font-size: 21px; }
+      .magic-ball { width: 245px; height: 245px; }
+      .fortune-text { top: 82px; font-size: 19px; }
     }
   </style>
 </head>
@@ -511,14 +567,14 @@
     <h2>Твій знак англійської на сьогодні</h2>
 
     <div class="fortune-card">
-      <div class="fortune-symbol">✦</div>
-
       <div class="fortune-note">
-        Натисни на картку та отримай коротке позитивне передбачення англійською.
+        Натисни на магічну кулю та отримай коротке позитивне передбачення англійською.
       </div>
 
-      <div class="fortune-text" id="fortuneText">
-        Your English journey starts with one brave step 💜
+      <div class="magic-ball" onclick="getFortune()">
+        <div class="fortune-text" id="fortuneText">
+          Your English journey starts with one brave step 💜
+        </div>
       </div>
 
       <button class="fortune-button" onclick="getFortune()">Отримати знак</button>
@@ -556,6 +612,7 @@
         <button onclick="checkWord()">Перевірити слово</button>
         <button onclick="clearAnswer()">Очистити</button>
         <button onclick="shuffleTiles()">Перемішати</button>
+        <button onclick="nextWord()">Наступне слово</button>
       </div>
 
       <div class="game-result" id="gameResult">Натискай на букви або перетягуй їх у поле відповіді.</div>
@@ -671,28 +728,121 @@
 
     const gameData = {
       kids: {
-        word: "TEACHER",
-        answers: ["tea","eat","ate","ear","are","era","art","rat","tar","car","care","race","each","teach","cheer","chart","heart","heat","hate","hear"]
+        words: [
+          "TEACHER","SCHOOL","FRIEND","ANIMAL","FAMILY",
+          "WINDOW","GARDEN","MARKET","PLANET","FLOWER",
+          "SUMMER","WINTER","ORANGE","BANANA","PENCIL",
+          "MONKEY","TURTLE","COOKIE","CASTLE","MOTHER"
+        ]
       },
       a2b1: {
-        word: "EDUCATION",
-        answers: ["act","cat","cut","can","net","ten","tin","tie","tea","due","die","done","note","coin","unit","unite","caution","action","ocean","date"]
+        words: [
+          "EDUCATION","ATTENTION","PRACTICE","LANGUAGE","CONFIDENT",
+          "CREATIVE","IMPORTANT","DISCOVER","ADVENTURE","QUESTION",
+          "SPEAKING","LEARNING","PROGRESS","VOCABULARY","MOTIVATION",
+          "INTEREST","TRAINING","DIRECTION","KNOWLEDGE","BEAUTIFUL"
+        ]
       },
       advanced: {
-        word: "SUPERSTITION",
-        answers: ["super","stir","stone","store","route","noise","point","print","prison","spirit","insist","potion","position","tourist","person","option","inspire","sister","trust","nest"]
+        words: [
+          "SUPERSTITION","TRANSFORMATION","COMMUNICATION","CONCENTRATION","INDEPENDENCE",
+          "OPPORTUNITY","RESPONSIBILITY","IMAGINATION","INSPIRATION","DETERMINATION",
+          "CONVERSATION","INTERNATIONAL","UNDERSTANDING","ACHIEVEMENT","PRESENTATION",
+          "RELATIONSHIP","CONFIDENCE","DEVELOPMENT","POSSIBILITY","CELEBRATION"
+        ]
       }
     };
 
+    const allowedWords = [
+      "a","an","am","as","at","be","by","do","go","he","hi","if","in","is","it","me","my","no","on","or","so","to","up","us","we",
+      "tea","eat","ate","ear","are","era","art","rat","tar","car","care","race","each","teach","cheer","chart","heart","heat","hate","hear",
+      "school","cool","look","hook","cook","book","home","room","moon","soon","door","floor","food","good","wood","word","work","world",
+      "friend","find","fine","fire","red","end","ride","rain","train","main","name","same","game","team","time","mine","line","light",
+      "family","film","fail","mail","may","lay","fly","many","man","fan","animal","nail","tail","tall","all",
+      "window","win","wind","down","own","now","owl","low","flow","flower","row","wow",
+      "garden","green","read","dear","near","age","and","den",
+      "market","make","take","meat","rate","tame","mark",
+      "planet","plan","plane","net","ten","late","plate","plant","ant","nap","pen",
+      "summer","sun","sum","use","user","sure","mess","more","rose","mouse",
+      "winter","wine","new","tie","write","inter",
+      "orange","one","gone","range",
+      "banana","ban","nab","nan","cab","can",
+      "pencil","pin","nice","clip","ice","lie",
+      "monkey","key","money","yes",
+      "turtle","turn","true","rule","let","run","rut",
+      "cookie","ok",
+      "castle","cat","case","last","seat","east","sale",
+      "mother","other","hot","her","the",
+      "education","act","cut","tin","due","die","done","note","coin","unit","unite","caution","action","ocean","date",
+      "attention","tent","tone","nation","notion",
+      "practice","part","trap","trip","price","rice",
+      "language","angel","glue","leg",
+      "confident","dent",
+      "creative","create","react","active","ever",
+      "important","import",
+      "discover","cover","voice","over","side",
+      "adventure","advent",
+      "question","quite","stone",
+      "speaking","speak","sing","king","gain","pain",
+      "learning","learn","earning","ring","real",
+      "progress","press","gross",
+      "vocabulary","vocal","boy","your","bar",
+      "motivation","motion","into",
+      "interest","tree","rest",
+      "training",
+      "direction","direct",
+      "knowledge","know","ledge","gold",
+      "beautiful","beauty","full","life",
+      "superstition","super","stir","store","route","noise","point","print","spirit","potion","position","tourist","person","option","inspire","sister","trust","nest",
+      "transformation","form","storm",
+      "communication",
+      "concentration","center",
+      "independence","depend","deep","piece",
+      "opportunity","port",
+      "responsibility","story","best",
+      "imagination","image",
+      "inspiration",
+      "determination","term",
+      "conversation",
+      "international",
+      "understanding","stand","under",
+      "achievement","achieve","mean",
+      "presentation","present","station",
+      "relationship","ship","help",
+      "confidence",
+      "development","develop","moment",
+      "possibility","possible",
+      "celebration","celebrate"
+    ];
+
     let currentLevel = "kids";
+    let currentWordIndex = { kids: 0, a2b1: 0, advanced: 0 };
     let currentAnswer = "";
     let found = [];
+
+    function getCurrentBigWord() {
+      return gameData[currentLevel].words[currentWordIndex[currentLevel]];
+    }
 
     function setLevel(level) {
       currentLevel = level;
       currentAnswer = "";
       found = [];
-      document.getElementById("bigWord").innerText = gameData[level].word;
+      updateGameWord();
+    }
+
+    function nextWord() {
+      currentWordIndex[currentLevel]++;
+      if (currentWordIndex[currentLevel] >= gameData[currentLevel].words.length) {
+        currentWordIndex[currentLevel] = 0;
+      }
+      currentAnswer = "";
+      found = [];
+      updateGameWord();
+    }
+
+    function updateGameWord() {
+      document.getElementById("bigWord").innerText = getCurrentBigWord();
       document.getElementById("gameResult").innerText = "Натискай на букви або перетягуй їх у поле відповіді.";
       document.getElementById("foundWords").innerText = "Знайдені слова: —";
       renderTiles();
@@ -702,7 +852,8 @@
     function renderTiles() {
       const tiles = document.getElementById("tiles");
       tiles.innerHTML = "";
-      const letters = gameData[currentLevel].word.split("");
+      const letters = getCurrentBigWord().split("");
+
       letters.forEach((letter) => {
         const tile = document.createElement("div");
         tile.className = "tile";
@@ -752,23 +903,41 @@
       document.getElementById("gameResult").innerText = "Спробуй скласти нове слово.";
     }
 
-    function checkWord() {
-      const answers = gameData[currentLevel].answers;
-      const result = document.getElementById("gameResult");
+    function canBuildWord(smallWord, bigWord) {
+      const bigLetters = bigWord.toLowerCase().split("");
+      for (let letter of smallWord.toLowerCase()) {
+        const index = bigLetters.indexOf(letter);
+        if (index === -1) return false;
+        bigLetters.splice(index, 1);
+      }
+      return true;
+    }
 
-      if (!currentAnswer) {
+    function checkWord() {
+      const result = document.getElementById("gameResult");
+      const bigWord = getCurrentBigWord().toLowerCase();
+      const word = currentAnswer.toLowerCase();
+
+      if (!word) {
         result.innerText = "Спочатку склади слово з букв.";
         return;
       }
 
-      if (answers.includes(currentAnswer) && !found.includes(currentAnswer)) {
-        found.push(currentAnswer);
+      if (word.length < 2) {
+        result.innerText = "Слово має містити хоча б 2 літери.";
+        currentAnswer = "";
+        renderAnswer();
+        return;
+      }
+
+      if (allowedWords.includes(word) && canBuildWord(word, bigWord) && !found.includes(word)) {
+        found.push(word);
         result.innerText = "Так! Це слово підходить 💜";
         document.getElementById("foundWords").innerText = "Знайдені слова: " + found.join(", ");
-      } else if (found.includes(currentAnswer)) {
+      } else if (found.includes(word)) {
         result.innerText = "Це слово вже було. Спробуй інше.";
       } else {
-        result.innerText = "Майже! Спробуй ще раз.";
+        result.innerText = "Майже! Спробуй інше слово.";
       }
 
       currentAnswer = "";
@@ -776,26 +945,30 @@
     }
 
     function shuffleTiles() {
-      const word = gameData[currentLevel].word.split("").sort(() => Math.random() - 0.5).join("");
+      const word = getCurrentBigWord().split("").sort(() => Math.random() - 0.5).join("");
       const tiles = document.getElementById("tiles");
       tiles.innerHTML = "";
+
       word.split("").forEach((letter) => {
         const tile = document.createElement("div");
         tile.className = "tile";
         tile.innerText = letter;
         tile.draggable = true;
+
         tile.onclick = () => {
           currentAnswer += letter.toLowerCase();
           renderAnswer();
         };
+
         tile.ondragstart = (e) => {
           e.dataTransfer.setData("text", letter);
         };
+
         tiles.appendChild(tile);
       });
     }
 
-    renderTiles();
+    updateGameWord();
   </script>
 
 </body>
